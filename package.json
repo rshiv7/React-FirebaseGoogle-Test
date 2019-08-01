@@ -1,9 +1,14 @@
 {
   "name": "campmom",
   "version": "0.1.0",
+  "homepage": "https://rshiv7.github.io/React-FirebaseGoogle-Test",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "@material-ui/core": "^4.3.0",
+    "@material-ui/icons": "^4.2.1",
+    "firebase": "^6.3.4",
+    "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
@@ -11,6 +16,8 @@
     "react-with-firebase-auth": "^1.0.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
