@@ -26,12 +26,13 @@ const providers = {
 
 firebaseAppAuth.onAuthStateChanged(function (user) {
 
+    console.log("Auth state change noted");
     // If there's a user logged in:
     if (user) {
 
       // log user info to the console
       console.log("user is signed in!");
-      console.log("USER: ", user);
+      console.log("USER: ", user);  
 
       // access logged in user's data
     //   database.ref("/" + user.uid).once("value").then(function (snapshot) {
