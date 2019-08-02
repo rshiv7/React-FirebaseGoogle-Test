@@ -26,7 +26,7 @@ const providers = {
 
 firebaseAppAuth.onAuthStateChanged(function (user) {
 
-    console.log("Auth state change noted");
+    console.log("Auth state change noted", user);
     // If there's a user logged in:
     if (user) {
 
@@ -46,7 +46,9 @@ firebaseAppAuth.onAuthStateChanged(function (user) {
 
     } else {
       // if no user logged in, then redirect them back to sign in page
-      window.location.href = "/";
+      window.location.href = "/React-FirebaseGoogle-Test";
+
+    console.log("User not signed in")
     }
   });
 
