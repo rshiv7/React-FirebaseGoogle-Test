@@ -20,7 +20,34 @@ const providers = {
 };
 
 
+// FIREBASE AUTH EVENT LISTENER
+// ----------------------------
+// When this page loads, this event will automatically be triggered; it checks to see if there is a user logged in to the Firebase app that's configured on line 31
 
+firebaseAppAuth.onAuthStateChanged(function (user) {
+
+    // If there's a user logged in:
+    if (user) {
+
+      // log user info to the console
+      console.log("user is signed in!");
+      console.log("USER: ", user);
+
+      // access logged in user's data
+      database.ref("/" + user.uid).once("value").then(function (snapshot) {
+        // log all user's info to console
+        console.log("User Authenticated Data from Firebase:", snapshot.val());
+
+
+        // Send the user data to SQL - for now, just send user id and email (if they're not in the SQL DB already)
+
+      });
+
+    } else {
+      // if no user logged in, then redirect them back to sign in page
+      window.location.href = "/";
+    }
+  });
 
 
 
